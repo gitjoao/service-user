@@ -1,0 +1,6 @@
+create: 
+    handler: ${self:custom.functions}/user/create.handler
+    events:
+      - http:
+         method: 'POST'
+         path: 'create'

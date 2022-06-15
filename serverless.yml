@@ -1,0 +1,20 @@
+service: service-user
+
+frameworkVersion: '2'
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+
+custom:
+ functions: 'src/functions'
+ webpack:
+      webpackConfig: './webpack.config.js'
+      includeModules: true
+plugins: 
+  - serverless-webpack 
+  - serverless-offline
+
+functions: 
+  - ${file(${self:custom.functions}/login/_handlers.yml)}
+  - ${file(${self:custom.functions}/user/_handlers.yml)}

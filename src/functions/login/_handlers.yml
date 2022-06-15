@@ -1,0 +1,6 @@
+login: 
+    handler: ${self:custom.functions}/login/login.handler
+    events:
+      - http:
+         method: 'POST'
+         path: 'login'

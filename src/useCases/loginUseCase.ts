@@ -11,7 +11,6 @@ export class LoginUseCase {
     let response: LoginDto
     
     const user = await this.userRepository.findByEmail(input.email)
-    console.log('user::', JSON.stringify(user))
 
     if(!user) {
       throw ErrorConstants.INVALID_LOGIN

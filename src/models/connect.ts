@@ -1,6 +1,7 @@
+require('dotenv').config()
 import mongoose from 'mongoose'
 
-const uri = "mongodb+srv://myuserroot:4wKe3ZyF2zJM9q@study.vbvf1.mongodb.net/?retryWrites=true&w=majority";
+const uri = `${process.env.URI_MONGO}`;
 
 const mongosseConnection = mongoose
 mongosseConnection.connect(uri);
